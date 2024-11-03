@@ -1,2 +1,2 @@
-# XuanLin-X.github.io
+# XuanLin-X
 My website
