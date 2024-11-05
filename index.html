@@ -9,6 +9,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+    <style>
+        .project-container {
+            min-height: 570px; /* Combined height of previous containers (170px + 300px + 100px) */
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .project-header {
+            flex-shrink: 0;
+        }
+        
+        .project-media {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .project-media video,
+        .project-media img {
+            width: 80%;
+            border-radius: 5px;
+        }
+        
+        .project-description {
+            flex-shrink: 0;
+            text-align: justify;
+        }
+    </style>
     
 </head>
     
@@ -60,38 +92,39 @@
         <h3 style="font-family: 'Montserrat', sans-serif; color: #444; margin-bottom: 30px; text-align: center; font-size: 28px; font-weight: bold;">Theoretical</h3>
         
         <!-- First Theoretical Project -->
-        <div class="project-card">
-            <div class="project-header">
-                <a href="#" class="project-title">
-                    Accelerate Hybrid Model Predictive Control using Generalized Benders Decomposition
-                </a>
-                <div class="project-authors">
-                    <strong>Xuan Lin</strong>
+        <div class="project-container">
+                    <!-- Header Section -->
+                    <div class="project-header">
+                        <a href="#" style="text-decoration: none;">
+                            <span style="font-weight: bold; font-size: 24px;">Accelerate Hybrid Model Predictive Control using Generalized Benders Decomposition</span>
+                        </a>
+                        <br><br>
+                        <span style="font-size: 18px;"><strong>Xuan Lin</strong></span>
+                        <br>
+                        <span style="font-size: 16px;"><em>arXiv</em>, 2024</span>
+                        &nbsp;&nbsp;|&nbsp;&nbsp;
+                        <span>
+                            <a href="https://arxiv.org/abs/2406.00780" style="text-decoration: none; color: #666;">paper(short)</a> /
+                            <a href="https://arxiv.org/abs/2401.00917" style="text-decoration: none; color: #666;">paper(long)</a> /
+                            <a href="https://github.com/XuanLin/Benders-MPC" style="text-decoration: none; color: #666;">code</a>
+                        </span>
+                    </div>
+                    
+                    <!-- Media Section -->
+                    <div class="project-media">
+                        <video autoplay loop muted>
+                            <source src="images/cart_pole_animation.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    
+                    <!-- Description Section -->
+                    <div class="project-description">
+                        <p style="font-size: 16px;line-height:1.6;">
+                            We propose a hybrid motion planning and control framework based on Generalized Benders Decomposition that controls a cart-pole system with randomly moving soft-contact walls reaching speeds 2-3 times faster than Gurobi, oftentimes exceeding 1000Hz.
+                        </p>
+                    </div>
                 </div>
-                <div class="project-publication">
-                    <em>arXiv</em>, 2024
-                </div>
-                <div class="project-links">
-                    <a href="https://arxiv.org/abs/2406.00780" style="text-decoration: none; color: #666;">paper(short)</a> /
-                    <a href="https://arxiv.org/abs/2401.00917" style="text-decoration: none; color: #666;">paper(long)</a> /
-                    <a href="https://github.com/XuanLin/Benders-MPC" style="text-decoration: none; color: #666;">code</a>
-                </div>
-            </div>
-            
-            <div class="project-media">
-                <video autoplay loop muted>
-                    <source src="images/cart_pole_animation.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            
-            <div class="project-description">
-                <p>
-                    We propose a hybrid motion planning and control framework based on Generalized Benders Decomposition that controls a cart-pole system with randomly moving soft-contact walls reaching speeds 2-3 times faster than Gurobi, oftentimes exceeding 1000Hz.
-                </p>
-            </div>
-        </div>
-          
 
         <!-- Second Theoretical Project -->
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-bottom:40px;">
@@ -175,32 +208,45 @@
         <h3 style="font-family: 'Montserrat', sans-serif; color: #444; margin-bottom: 30px; text-align: center; font-size: 28px; font-weight: bold;">Applicative</h3>
         
         <!-- First Applicative Project -->
-          <div class="project-card">
-            <div class="project-header">
-                <a href="#" class="project-title">
-                    Footstep Planning for Humanoid Soccer
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-bottom:40px;">
+          <tr>
+            <td style="padding:20px;text-align:center">
+              <div style="min-height:170px;">
+                <a href="#" style="text-decoration: none;">
+                  <span style="font-weight: bold; font-size: 24px;">Footstep Planning for Humanoid Soccer</span>
                 </a>
-                <div class="project-authors">
-                    <strong>Xuan Lin</strong>, Ruochen Hou, Gabriel Fernandez, Dennis Hong
-                </div>
-                <div class="project-publication">
-                    <em>RoboCup</em>, 2024, <strong>First Place</strong></span>
-                </div>
-            </div>
-            
-            <div class="project-media">
-                <video autoplay loop muted>
-                    <source src="images/soccer.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
+                <br><br>
+                <span style="font-size: 18px;"><strong>Xuan Lin</strong>, Ruochen Hou, Gabriel Fernandez, Dennis Hong</span>
+                <br>
+                <span style="font-size: 16px;"><em>RoboCup</em>, 2024, <strong>First Place</strong></span>
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+                <span>
+                  <a href="#" style="text-decoration: none; color: #666;">paper</a> /
+                  <a href="#" style="text-decoration: none; color: #666;">code</a>
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:20px;text-align:center">
+              <div style="min-height:300px;">
+                <video width="80%" autoplay loop muted style="border-radius: 5px;">
+                  <source src="images/soccer.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
                 </video>
-            </div>
-            
-            <div class="project-description">
-                <p>
-                    We use Divergent-Component-of-Motion (DCM) to plan footsteps for humanoid soccer.
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:20px;text-align:justify">
+              <div style="min-height:100px;">
+                <p style="font-size: 16px;line-height:1.6;">
+                  We use Divergent-Component-of-Motion (DCM) to plan footsteps for humanoid soccer.
                 </p>
-            </div>
-        </div>
+              </div>
+            </td>
+          </tr>
+        </table>
 
         <!-- Second Applicative Project -->
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-bottom:40px;">
