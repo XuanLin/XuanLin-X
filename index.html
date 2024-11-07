@@ -1,5 +1,19 @@
 <!DOCTYPE html>
 <html>
+
+<style>
+.project-block {
+    min-height: 500px;
+    padding: 20px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.project-block:hover {
+    background-color: #f5f5f5;  /* Light gray background on hover */
+}
+</style>
+    
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -66,7 +80,7 @@
             <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-bottom:40px;">
                 <tr>
                     <td style="padding:20px;text-align:center">
-                        <div style="min-height:500px;">
+                        <div class="project-block">
                             <a href="#" style="text-decoration: none;">
                                 <span style="font-weight: bold; font-size: 24px;">Accelerate Hybrid Model Predictive Control using Generalized Benders Decomposition</span>
                             </a>
