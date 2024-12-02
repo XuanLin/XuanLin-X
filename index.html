@@ -2,6 +2,18 @@
 <html>
 
 <style>
+.nav-links a.active {
+    color: #000;
+}
+
+.nav-links a.active::after {
+    transform: scaleX(1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+    
 .nav-bar {
     position: sticky;
     top: 0;
@@ -345,6 +357,24 @@ section {
   </tbody>
 </table>
 </section>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        const targetPosition = targetElement.offsetTop - 60; // Offset for the sticky nav bar
+        
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth',
+            duration: 1000  // This won't actually be used but shows intent
+        });
+    });
+});
+
+</script>
     
 </body>
 
