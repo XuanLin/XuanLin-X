@@ -1,5 +1,62 @@
 <!DOCTYPE html>
 <html>
+
+<style>
+.nav-bar {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1000;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    margin: 0 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #444;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    padding: 5px 0;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: #000;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+}
+
+section {
+    scroll-margin-top: 80px; /* Ensures section headings are visible when scrolled to */
+}
+</style>
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -13,6 +70,15 @@
 </head>
     
 <body>
+
+    <nav class="nav-bar">
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#philosophy">Research Philosophy</a></li>
+        </ul>
+    </nav>
+    
     <table style="width:100%;max-width:1200px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
       <tr style="padding:0px">
         <td style="padding:0px">
@@ -20,7 +86,9 @@
             <tr style="padding:0px">
               <td style="padding:2.5%;width:70%;vertical-align:middle">
                 <p class="name" style="text-align: center; font-size: 32px; font-weight: 600; margin-bottom: 20px; font-family: 'Montserrat', sans-serif;">
-                  Xuan Lin
+                    <section id="home">
+                        Xuan Lin
+                    </section>  
                 </p>
                 <p style="font-weight: 300; line-height: 1.6; font-size: 16px; margin-bottom: 20px;">
                   I am a roboticist specializing in motion planning and control for legged locomotion. I earned my Ph.D. in the Robotics and Mechanisms Laboratory (RoMeLa) at UCLA, where I worked with Prof. Dennis Hong. I am currently completing a postdoctoral position at the Georgia Institute of Technology, where I've had the opportunity to collaborate with Prof. Ye Zhao and Prof. Sam Coogan.
