@@ -133,7 +133,7 @@ section {
         </ul>
     </nav>
 
-    <section id="home">
+<section id="home">
     <style>
         .profile-photo {
             width: 100%;
@@ -144,16 +144,23 @@ section {
         
         /* Mobile styles */
         @media screen and (max-device-width: 480px) {
-            #home td[style*="width:70%"] {
+            #home .text-column {
                 width: 50% !important;
-                display: inline-block;
+                padding: 2.5%;
             }
             
-            #home td[style*="width:22%"] {
-                width: 50% !important;
-                max-width: 50% !important;
-                display: inline-block;
+            #home .photo-column {
+                width: 45% !important;
+                max-width: 45% !important;
                 padding: 2.5%;
+            }
+
+            #home .name {
+                font-size: 24px !important;
+            }
+
+            #home p {
+                font-size: 16px !important;
             }
         }
     </style>
@@ -165,7 +172,7 @@ section {
                     <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
                         <tbody>
                             <tr style="padding:0px">
-                                <td style="padding:2.5%;width:70%;vertical-align:middle">
+                                <td class="text-column" style="padding:2.5%;width:70%;vertical-align:middle">
                                     <p class="name" style="text-align: center; font-size: 32px; font-weight: 600; margin-bottom: 20px; font-family: 'Montserrat', sans-serif;">
                                         Xuan Lin  
                                     </p>
@@ -181,7 +188,7 @@ section {
                                         <a href="https://github.com/XuanLin">Github</a>
                                     </p>
                                 </td>
-                                <td style="padding:2.5%;width:22%;max-width:22%">
+                                <td class="photo-column" style="padding:2.5%;width:22%;max-width:22%">
                                     <a href="images/AX.jpg">
                                         <img src="images/AX.jpg" alt="profile photo" class="profile-photo hoverZoomLink">
                                     </a>
