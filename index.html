@@ -82,17 +82,37 @@ section {
 }
 
 #research {
-    background-color: #fcf7eb;  /* Slightly darker yellow */
+    background-color: #fcf7eb;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%);
     padding: 40px 0;
+    box-sizing: border-box; /* This ensures padding is included in width calculation */
 }
 
 #research > table {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0; /* Reset any padding */
+}
+
+/* Reset any potential padding in child tables */
+#research table table {
+    padding: 0;
+    margin: 0 auto;
+}
+
+/* Safari-specific fix */
+@supports (-webkit-touch-callout: none) {
+    #research {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    #research > table {
+        padding: 0 20px; /* Move padding to the inner table if needed */
+    }
 }
 
 #philosophy {
