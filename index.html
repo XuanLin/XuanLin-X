@@ -134,47 +134,66 @@ section {
     </nav>
 
     <section id="home">
-    <table style="width:100%;max-width:1200px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr style="padding:0px">
-              <td style="padding:2.5%;width:70%;vertical-align:middle">
-                <p class="name" style="text-align: center; font-size: 32px; font-weight: 600; margin-bottom: 20px; font-family: 'Montserrat', sans-serif;">
-                    Xuan Lin  
-                </p>
-                <p style="font-weight: 300; line-height: 1.6; font-size: 18px; margin-bottom: 20px;">
-                  I am a roboticist specializing in motion planning and control for legged locomotion. I completed my Ph.D. at UCLA, where I worked with Prof. Dennis Hong. I am currently completing a postdoctoral position at the Georgia Institute of Technology, where I've had the opportunity to collaborate with Prof. Ye Zhao and Prof. Sam Coogan.
-                </p>
-                <p style="font-weight: 300; line-height: 1.6; font-size: 18px;">
-                  My first authored papers received the Best Paper Award on Safety, Security, and Rescue Robotics at IROS 2019 and was a finalist for the Best Paper Award at the UR 2024. I am a member of the world championship team for the RoboCup 2024 competition.
-                </p>
-                <p style="text-align:center">
-                  <a href="data/CV_10_2024.pdf">CV</a> &nbsp;/&nbsp;
-                  <a href="https://scholar.google.com/citations?user=KWCSIa4AAAAJ">Scholar</a> &nbsp;/&nbsp;
-                  <a href="https://github.com/XuanLin">Github</a>
-                </p>
-              </td>
-              <td style="padding:2.5%;width:22%;max-width:22%">
-                <a href="images/AX.jpg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/AX.jpg" class="hoverZoomLink"></a>
-              </td>
-            </tr>
-          </tbody></table>
-          </section>
+    <style>
+        .profile-photo {
+            width: 100%;
+            max-width: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        
+        /* Mobile styles */
+        @media screen and (max-device-width: 480px) {
+            #home td[style*="width:70%"] {
+                width: 50% !important;
+                display: inline-block;
+            }
+            
+            #home td[style*="width:22%"] {
+                width: 50% !important;
+                max-width: 50% !important;
+                display: inline-block;
+                padding: 2.5%;
+            }
+        }
+    </style>
 
-            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr>
-              <td style="padding:20px;width:100%;vertical-align:middle">
-                <h2 style="font-family: 'Montserrat', sans-serif; margin-bottom: 20px;">Research</h2>
-                <p style="font-weight: 300; line-height: 1.6; font-size: 18px; margin-bottom: 30px;">
-                   During my M.S. studies, my research focused on the hardware aspects of robotics, including the development of wall-climbing robots, grippers, and humanoids; notable works include <a href="https://xuanlin.github.io/SiLVIA-robot/" target="_blank" color: #0066cc;">SiLVIA</a> and SCALER. During my Ph.D., I have shifted toward creating general robotics frameworks for motion planning and control. My research focuses on developing scalable mixed-integer convex programming algorithms for robotics. <strong style="font-weight: bold;">Building on my contributions, including logic network flow and Benders decomposition, I aim to scale mixed-integer convex programmings for robot motion planning, with applications in search and rescue, urban logistics, factory automation, and beyond.</strong>
-                </p>
-                <p style="font-weight: 300; line-height: 1.6; font-size: 18px; margin-bottom: 30px;">
-                  To illustrate this distinction, I categorize my research into two columns: "Theoretical" and "Applicative." In the "Theoretical" column, I show the data structures, optimization formulations, and toy problems that underpin general frameworks. In the "Applicative" column, I showcase real robots in action.
-                </p>  
-              </td>
+    <table style="width:100%;max-width:1200px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+        <tbody>
+            <tr style="padding:0px">
+                <td style="padding:0px">
+                    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                        <tbody>
+                            <tr style="padding:0px">
+                                <td style="padding:2.5%;width:70%;vertical-align:middle">
+                                    <p class="name" style="text-align: center; font-size: 32px; font-weight: 600; margin-bottom: 20px; font-family: 'Montserrat', sans-serif;">
+                                        Xuan Lin  
+                                    </p>
+                                    <p style="font-weight: 300; line-height: 1.6; font-size: 18px; margin-bottom: 20px;">
+                                        I am a roboticist specializing in motion planning and control for legged locomotion. I completed my Ph.D. at UCLA, where I worked with Prof. Dennis Hong. I am currently completing a postdoctoral position at the Georgia Institute of Technology, where I've had the opportunity to collaborate with Prof. Ye Zhao and Prof. Sam Coogan.
+                                    </p>
+                                    <p style="font-weight: 300; line-height: 1.6; font-size: 18px;">
+                                        My first authored papers received the Best Paper Award on Safety, Security, and Rescue Robotics at IROS 2019 and was a finalist for the Best Paper Award at the UR 2024. I am a member of the world championship team for the RoboCup 2024 competition.
+                                    </p>
+                                    <p style="text-align:center">
+                                        <a href="data/CV_10_2024.pdf">CV</a> &nbsp;/&nbsp;
+                                        <a href="https://scholar.google.com/citations?user=KWCSIa4AAAAJ">Scholar</a> &nbsp;/&nbsp;
+                                        <a href="https://github.com/XuanLin">Github</a>
+                                    </p>
+                                </td>
+                                <td style="padding:2.5%;width:22%;max-width:22%">
+                                    <a href="images/AX.jpg">
+                                        <img src="images/AX.jpg" alt="profile photo" class="profile-photo hoverZoomLink">
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
             </tr>
-          </tbody></table>
+        </tbody>
+    </table>
+</section>
 
 <section id="research">
 <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
