@@ -217,10 +217,49 @@ section {
 </section>
 
 <section id="research">
+
+ <style>
+    /* Default table styles */
+    #research {
+        background-color: #fcf7eb;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+        padding: 40px 0;
+    }
+
+    #research > table {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* Mobile styles */
+    @media screen and (max-device-width: 480px) {
+        #research tr td {
+            display: block;
+            width: 100% !important;
+        }
+
+        #research tr td[style*="border-left"] {
+            border-left: none !important;
+            border-top: 1px solid #ddd;
+            margin-top: 20px;
+            padding-top: 40px;
+        }
+
+        #research video, 
+        #research img {
+            width: 90% !important;
+        }
+    }
+</style>
+    
 <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
   <tbody>
     <tr>
-      <!-- Left Column - Theoretical -->
+       
+        <!-- Left Column - Theoretical -->
         <td style="padding:20px;width:50%;vertical-align:top">
             <h3 style="font-family: 'Montserrat', sans-serif; color: #444; margin-bottom: 30px; text-align: center; font-size: 28px; font-weight: bold;">Theoretical</h3>
 
@@ -433,6 +472,8 @@ section {
                     </td>
                 </tr>
             </table>
+
+            
         </td>
     </tr>
   </tbody>
