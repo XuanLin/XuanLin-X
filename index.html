@@ -2,18 +2,14 @@
 <html>
 
 <style>
-.nav-links a.active {
-    color: #000;
+/* Reset body margin and add padding to prevent scrollbar jumps */
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
-.nav-links a.active::after {
-    transform: scaleX(1);
-}
-
-html {
-    scroll-behavior: smooth;
-}
-    
+/* Navigation bar fixes */
 .nav-bar {
     position: sticky;
     top: 0;
@@ -21,53 +17,10 @@ html {
     z-index: 1000;
     padding: 15px 0;
     border-bottom: 1px solid #eee;
-}
-
-.nav-links {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.nav-links li {
-    margin: 0 20px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #444;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    padding: 5px 0;
-    position: relative;
-}
-
-.nav-links a:hover {
-    color: #000;
-}
-
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
     width: 100%;
-    height: 2px;
-    background-color: #000;
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
 }
 
-.nav-links a:hover::after {
-    transform: scaleX(1);
-}
-
-section {
-    scroll-margin-top: 80px;
-}
-
+/* Full-width section styling */
 #home {
     background-color: #ffffff;
     width: 100vw;
@@ -75,24 +28,12 @@ section {
     margin-right: calc(-50vw + 50%);
 }
 
-#home > table {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
 #research {
-    background-color: #fcf7eb;  /* Slightly darker yellow */
+    background-color: #fcf7eb;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%);
     padding: 40px 0;
-}
-
-#research > table {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 #philosophy {
@@ -103,12 +44,45 @@ section {
     padding: 40px 0;
 }
 
-#philosophy > table {
+/* Content width constraints */
+#home > .content-wrapper,
+#research > .content-wrapper,
+#philosophy > .content-wrapper {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
 }
-    
+
+/* Existing styles for table columns on mobile */
+@media screen and (max-device-width: 480px) {
+    #research tr td {
+        display: block;
+        width: 100% !important;
+    }
+
+    #research tr td[style*="border-left"] {
+        border-left: none !important;
+        border-top: 1px solid #ddd;
+        margin-top: 20px;
+        padding-top: 40px;
+    }
+
+    #research video, 
+    #research img {
+        width: 90% !important;
+    }
+}
+
+/* Safari-specific fixes */
+@supports (-webkit-touch-callout: none) {
+    #home, #research, #philosophy {
+        width: 100vw;
+        left: 0;
+        right: 0;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+    }
+}
 </style>
 
 <head>
@@ -165,7 +139,7 @@ section {
                 }
             }
         </style>
-    
+
         <table style="width:100%;max-width:1200px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
                 <tr style="padding:0px">
