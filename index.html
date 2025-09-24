@@ -17,21 +17,17 @@ html {
 /* Hero Video */
 .hero-video-container {
     position: relative;
-    width: 100%;           /* full page width */
-    height: 100vh;         /* full viewport height */
+    width: 100%;           /* full width of the page */
     overflow: hidden;
-    display: flex;         /* flex to center content */
+    display: flex;         /* use flexbox to center content */
     justify-content: center; /* center horizontally */
-    align-items: center;     /* center vertically */
-    background: #000;      /* fallback background */
 }
 
 .hero-video {
-    width: 99%;            /* slightly smaller than container width */
-    height: 100%;           /* fill container height */
-    object-fit: cover;     /* scale to fill, crop if necessary */
+    width: 99%;            /* slightly smaller than full width */
+    height: auto;          /* keep aspect ratio */
+    object-fit: contain;   /* fit inside the container */
 }
-
 
 
     
