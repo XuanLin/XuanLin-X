@@ -122,8 +122,7 @@ section {
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%);
-    margin-top: 60vh;  /* Add this line to push content below video */
-    padding-top: 80px;  /* Add padding for fixed nav */
+    padding-top: 80px;  /* For fixed nav */
 }
 
 #home > table {
@@ -576,7 +575,22 @@ section {
     });
     
     </script>
+
+<script>
+// Ensure video loops
+const heroVideo = document.querySelector('.hero-video');
+if (heroVideo) {
+    heroVideo.loop = true;
+    heroVideo.muted = true;
+    heroVideo.autoplay = true;
     
+    // Fallback for loop
+    heroVideo.addEventListener('ended', function() {
+        heroVideo.currentTime = 0;
+        heroVideo.play();
+    });
+}
+</script>
 </body>
 
 <img src="https://hitwebcounter.com/counter/counter.php?page=18216664&style=0008&nbdigits=5&type=ip&initCount=336" title="Counter Widget" Alt="Visit counter For Websites"   border="0" /></a>
