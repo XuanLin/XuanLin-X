@@ -64,6 +64,37 @@ html {
     transform: scaleX(1);
 }
 
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    animation: bounce 2s infinite;
+}
+
+.arrow-down {
+    width: 30px;
+    height: 30px;
+    margin: 10px auto;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(45deg);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
 section {
     scroll-margin-top: 80px;
 }
@@ -148,375 +179,381 @@ section {
 </head>
     
 <body>
+    
+    <div class="hero-video-container">
+        <video autoplay loop muted playsinline class="hero-video">
+            <source src="images/door_open_hero.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-video-overlay"></div>
+    </div>
 
-    <nav class="nav-bar">
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#research">Research Projects</a></li>
-        </ul>
-    </nav>
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#research">Research Projects</a></li>
+    </ul>
 
-<section id="home">
-    <style>
-        .profile-photo {
-            width: 100%;
-            max-width: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-        
-        /* Mobile styles */
-        @media screen and (max-device-width: 480px) {
-            #home .text-column {
-                width: 50% !important;
-                padding: 2.5%;
+    <section id="home">
+        <style>
+            .profile-photo {
+                width: 100%;
+                max-width: 100%;
+                object-fit: cover;
+                border-radius: 50%;
             }
             
-            #home .photo-column {
-                width: 45% !important;
-                max-width: 45% !important;
-                padding: 2.5%;
+            /* Mobile styles */
+            @media screen and (max-device-width: 480px) {
+                #home .text-column {
+                    width: 50% !important;
+                    padding: 2.5%;
+                }
+                
+                #home .photo-column {
+                    width: 45% !important;
+                    max-width: 45% !important;
+                    padding: 2.5%;
+                }
+    
+                #home .name {
+                    font-size: 24px !important;
+                }
+    
+                #home p {
+                    font-size: 16px !important;
+                }
             }
-
-            #home .name {
-                font-size: 24px !important;
+        </style>
+    
+        <table style="width:100%;max-width:1200px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+                <tr style="padding:0px">
+                    <td style="padding:0px">
+                        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                            <tbody>
+                                <tr style="padding:0px">
+                                    <td class="text-column" style="padding:2.5%;width:70%;vertical-align:middle">
+                                        <p class="name" style="text-align: center; font-size: 32px; font-weight: 600; margin-bottom: 20px; font-family: 'Montserrat', sans-serif;">
+                                            Xuan Lin  
+                                        </p>
+                                        <p style="font-weight: 300; line-height: 1.6; font-size: 18px; margin-bottom: 20px;">
+                                            I am a roboticist specializing in motion planning and control for legged locomotion. I completed my Ph.D. at UCLA, where I worked with Prof. Dennis Hong. I am currently completing a postdoctoral position at the Georgia Institute of Technology, where I've had the opportunity to collaborate with Prof. Ye Zhao.
+                                        </p>
+                                        <p style="font-weight: 300; line-height: 1.6; font-size: 18px;">
+                                            My first authored papers received the Best Paper Award on Safety, Security, and Rescue Robotics at IROS 2019 and was a finalist for the Best Paper Award at the UR 2024. I am a member of the world championship team for the RoboCup 2024 competition.
+                                        </p>
+                                        <p style="text-align:center">
+                                            <a href="data/CV_7_2025.pdf">CV</a> &nbsp;/&nbsp;
+                                            <a href="https://scholar.google.com/citations?user=KWCSIa4AAAAJ">Scholar</a> &nbsp;/&nbsp;
+                                            <a href="https://github.com/XuanLin">Github</a>
+                                        </p>
+                                    </td>
+                                    <td class="photo-column" style="padding:2.5%;width:22%;max-width:22%">
+                                        <a href="images/AX.jpg">
+                                            <img src="images/AX.jpg" alt="profile photo" class="profile-photo hoverZoomLink">
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+          <td style="padding:20px;width:100%;vertical-align:middle">
+            <h2 style="font-family: 'Montserrat', sans-serif; margin-bottom: 20px;">Research</h2>
+            <p style="font-weight: 300; line-height: 1.6; font-size: 18px; margin-bottom: 30px;">
+               During my M.S. studies, my research focused on the hardware aspects of robotics, including the development of wall-climbing robots, grippers, and humanoids; notable works include <a href="https://xuanlin.github.io/SiLVIA-robot/" target="_blank" color: #0066cc;">SiLVIA</a> and SCALER. During my Ph.D., I have shifted toward creating general robotics frameworks for motion planning and control. My research focuses on developing scalable mixed-integer convex programming algorithms for robotics. <strong style="font-weight: bold;">Building on my contributions, including logic network flow and Benders decomposition, I aim to scale mixed-integer convex programmings for robot motion planning, with applications in search and rescue, urban logistics, factory automation, and beyond.</strong>
+            </p> 
+          </td>
+        </tr>
+        </tbody></table>
+    </section>
+    
+    <section id="research">
+    
+     <style>
+        /* Default table styles */
+        #research {
+            background-color: #fcf7eb;
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+            padding: 40px 0;
+        }
+    
+        #research > table {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    
+        /* Mobile styles */
+        @media screen and (max-device-width: 480px) {
+            #research tr td {
+                display: block;
+                width: 100% !important;
             }
-
-            #home p {
-                font-size: 16px !important;
+    
+            #research tr td[style*="border-left"] {
+                border-left: none !important;
+                border-top: 1px solid #ddd;
+                margin-top: 20px;
+                padding-top: 40px;
+            }
+    
+            #research video, 
+            #research img {
+                width: 90% !important;
             }
         }
     </style>
-
-    <table style="width:100%;max-width:1200px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-        <tbody>
-            <tr style="padding:0px">
-                <td style="padding:0px">
-                    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                        <tbody>
-                            <tr style="padding:0px">
-                                <td class="text-column" style="padding:2.5%;width:70%;vertical-align:middle">
-                                    <p class="name" style="text-align: center; font-size: 32px; font-weight: 600; margin-bottom: 20px; font-family: 'Montserrat', sans-serif;">
-                                        Xuan Lin  
-                                    </p>
-                                    <p style="font-weight: 300; line-height: 1.6; font-size: 18px; margin-bottom: 20px;">
-                                        I am a roboticist specializing in motion planning and control for legged locomotion. I completed my Ph.D. at UCLA, where I worked with Prof. Dennis Hong. I am currently completing a postdoctoral position at the Georgia Institute of Technology, where I've had the opportunity to collaborate with Prof. Ye Zhao.
-                                    </p>
-                                    <p style="font-weight: 300; line-height: 1.6; font-size: 18px;">
-                                        My first authored papers received the Best Paper Award on Safety, Security, and Rescue Robotics at IROS 2019 and was a finalist for the Best Paper Award at the UR 2024. I am a member of the world championship team for the RoboCup 2024 competition.
-                                    </p>
-                                    <p style="text-align:center">
-                                        <a href="data/CV_7_2025.pdf">CV</a> &nbsp;/&nbsp;
-                                        <a href="https://scholar.google.com/citations?user=KWCSIa4AAAAJ">Scholar</a> &nbsp;/&nbsp;
-                                        <a href="https://github.com/XuanLin">Github</a>
-                                    </p>
-                                </td>
-                                <td class="photo-column" style="padding:2.5%;width:22%;max-width:22%">
-                                    <a href="images/AX.jpg">
-                                        <img src="images/AX.jpg" alt="profile photo" class="profile-photo hoverZoomLink">
-                                    </a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr>
-      <td style="padding:20px;width:100%;vertical-align:middle">
-        <h2 style="font-family: 'Montserrat', sans-serif; margin-bottom: 20px;">Research</h2>
-        <p style="font-weight: 300; line-height: 1.6; font-size: 18px; margin-bottom: 30px;">
-           During my M.S. studies, my research focused on the hardware aspects of robotics, including the development of wall-climbing robots, grippers, and humanoids; notable works include <a href="https://xuanlin.github.io/SiLVIA-robot/" target="_blank" color: #0066cc;">SiLVIA</a> and SCALER. During my Ph.D., I have shifted toward creating general robotics frameworks for motion planning and control. My research focuses on developing scalable mixed-integer convex programming algorithms for robotics. <strong style="font-weight: bold;">Building on my contributions, including logic network flow and Benders decomposition, I aim to scale mixed-integer convex programmings for robot motion planning, with applications in search and rescue, urban logistics, factory automation, and beyond.</strong>
-        </p> 
-      </td>
-    </tr>
-    </tbody></table>
-</section>
-
-<section id="research">
-
- <style>
-    /* Default table styles */
-    #research {
-        background-color: #fcf7eb;
-        width: 100vw;
-        margin-left: calc(-50vw + 50%);
-        margin-right: calc(-50vw + 50%);
-        padding: 40px 0;
-    }
-
-    #research > table {
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    /* Mobile styles */
-    @media screen and (max-device-width: 480px) {
-        #research tr td {
-            display: block;
-            width: 100% !important;
-        }
-
-        #research tr td[style*="border-left"] {
-            border-left: none !important;
-            border-top: 1px solid #ddd;
-            margin-top: 20px;
-            padding-top: 40px;
-        }
-
-        #research video, 
-        #research img {
-            width: 90% !important;
-        }
-    }
-</style>
-    
-<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-  <tbody>
-    <tr>
-       
-        <!-- Left Column - Theoretical -->
-        <td style="width:50%;vertical-align:top">
-            <h3 style="font-family: 'Montserrat', sans-serif; color: #444; margin-bottom: 30px; text-align: center; font-size: 28px; font-weight: bold;">Theoretical</h3>
-
-            <!-- First Theoretical Project -->
-            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-bottom:40px;">
-                <tr>
-                    <td style="padding:20px;text-align:center">
-                        <div style="min-height:570px;">
-                            <a href="#" style="text-decoration: none;">
-                                <span style="font-weight: bold; font-size: 24px;">Accelerate Hybrid Model Predictive Control using Generalized Benders Decomposition</span>
-                            </a>
-                            <br><br>
-                            <span style="font-size: 18px;"><strong>Xuan Lin</strong></span>
-                            <br>
-                            <span style="font-size: 18px;"><em>arXiv</em>, 2024</span>
-                            &nbsp;&nbsp;|&nbsp;&nbsp;
-                            <span>
-                                <a href="https://arxiv.org/abs/2406.00780" style="text-decoration: none; color: #666;">paper(short)</a> /
-                                <a href="https://arxiv.org/abs/2401.00917" style="text-decoration: none; color: #666;">paper(long)</a> /
-                                <a href="https://github.com/XuanLin/Benders-MPC" style="text-decoration: none; color: #666;">code</a>
-                            </span>
-
-                            <video width="80%" autoplay loop muted playsinline webkit-playsinline preload="auto" style="border-radius: 5px; margin-top: 20px;">
-                                <source src="images/cart_pole_animation.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-
-                            <p style="font-size: 18px;line-height:1.6;text-align:justify;margin-top: 20px;">
-                                We propose a hybrid motion planning and control framework based on Generalized Benders Decomposition that controls a cart-pole system with randomly moving soft-contact walls reaching speeds 2-3 times faster than Gurobi, oftentimes exceeding 1000Hz.
-                            </p>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-
-            <!-- Second Theoretical Project -->
-            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-bottom:40px;">
-                <tr>
-                    <td style="padding:20px;text-align:center">
-                        <div style="min-height:570px;">
-                            <a href="#" style="text-decoration: none;">
-                                <span style="font-weight: bold; font-size: 24px;">Optimization-based Task and Motion Planning under Signal Temporal Logic Specifications using Logic Network Flow</span>
-                            </a>
-                            <br><br>
-                            <span style="font-size: 18px;"><strong>Xuan Lin</strong>, Jiming Ren, Samuel Coogan, Ye Zhao</span>
-                            <br>
-                            <span style="font-size: 18px;"><em>ICRA</em>, 2025</span>
-                            &nbsp;&nbsp;|&nbsp;&nbsp;
-                            <span>
-                                <a href="https://arxiv.org/abs/2409.19168" style="text-decoration: none; color: #666;">paper</a> /
-                                <a href="#" style="text-decoration: none; color: #666;">code</a>
-                            </span>
-
-                            <img src='images/LNF.png' width="80%" style="border-radius: 5px; margin-top: 20px;">
-
-                            <p style="font-size: 18px;line-height:1.6;text-align:justify;margin-top: 20px;">
-                                We propose Logic Network Flow, an innovative optimization formulation for motion planning under temporal logic constraints. Synthesized with Dynamic Network Flow, our framework accelerates the computation by tightening the convex relaxations.
-                            </p>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-
-            <!-- Third Theoretical Project -->
-            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-bottom:40px;">
-                <tr>
-                    <td style="padding:20px;text-align:center">
-                        <div style="min-height:570px;">
-                            <a href="#" style="text-decoration: none;">
-                                <span style="font-weight: bold; font-size: 24px;">Evaluating Data-driven Performances of Mixed Integer Bilinear Formulations for Robotics Applications</span>
-                            </a>
-                            <br><br>
-                            <span style="font-size: 18px;"><strong>Xuan Lin</strong>, Gabriel Fernandez, Dennis Hong</span>
-                            <br>
-                            <span style="font-size: 18px;"><em>UR</em>, 2024, finalist, <strong>Best Paper Award</strong></span>
-                            &nbsp;&nbsp;|&nbsp;&nbsp;
-                            <span>
-                                <a href="https://ieeexplore.ieee.org/abstract/document/10597466" style="text-decoration: none; color: #666;">paper</a> /
-                                <a href="#" style="text-decoration: none; color: #666;">code</a>
-                            </span>
-
-                            <img src='images/Bilinear.png' width="80%" style="border-radius: 5px; margin-top: 20px;">
-
-                            <p style="font-size: 18px;line-height:1.6;text-align:justify;margin-top: 20px;">
-                                We compare the data-driven performance of two MIBLP reformulations: mixed-integer programming (MIP) and mathematical programming with complementary constraints (MPCC). This evaluation is conducted on a book placement problem featuring discrete configuration switches and bilinear constraints.
-                            </p>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-        </td>
-
-        <!-- Right Column - Applicative -->
-        <td style="width:50%;vertical-align:top;border-left: 1px solid #ddd">
-            <h3 style="font-family: 'Montserrat', sans-serif; color: #444; margin-bottom: 30px; text-align: center; font-size: 28px; font-weight: bold;">Applicative</h3>
-                    
-            <!-- First Applicative Project -->
-            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-bottom:40px;">
-                <tr>
-                    <td style="padding:20px;text-align:center">
-                        <div style="min-height:570px;">
-                            <a href="#" style="text-decoration: none;">
-                                <span style="font-weight: bold; font-size: 24px;">Footstep Planning for Humanoid Soccer</span>
-                            </a>
-                            <br><br>
-                            <span style="font-size: 18px;"><strong>Xuan Lin</strong>, Ruochen Hou, Gabriel Fernandez, Dennis Hong</span>
-                            <br>
-                            <span style="font-size: 18px;"><em>RoboCup</em>, 2024, <strong>First Place</strong></span>
-                            &nbsp;&nbsp;|&nbsp;&nbsp;
-                            <span>
-                                <a href="#" style="text-decoration: none; color: #666;">paper</a> /
-                                <a href="#" style="text-decoration: none; color: #666;">code</a>
-                            </span>
-
-                            <video width="80%" autoplay loop muted playsinline webkit-playsinline preload="auto" style="border-radius: 5px; margin-top: 20px;">
-                                <source src="images/soccer.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-
-                            <p style="font-size: 18px;line-height:1.6;text-align:justify;margin-top: 20px;">
-                                We use Divergent-Component-of-Motion (DCM) to plan footsteps for humanoid soccer.
-                            </p>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-
-            <!-- Second Applicative Project -->
-            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-bottom:40px;">
-                <tr>
-                    <td style="padding:20px;text-align:center">
-                        <div style="min-height:570px;">
-                            <a href="#" style="text-decoration: none;">
-                                <span style="font-weight: bold; font-size: 24px;">Time Critical Search and Rescue using Humanoid Robot Teams</span>
-                            </a>
-                            <br><br>
-                            <span style="font-size: 18px;"><strong>Xuan Lin</strong>, Jiming Ren, Samuel Coogan, Ye Zhao</span>
-                            <br>
-                            <span style="font-size: 18px;"><em>Ongoing work</em>, 2024</span>
-
-                            <video width="80%" autoplay loop muted playsinline webkit-playsinline preload="auto" style="border-radius: 5px; margin-top: 20px;">
-                                <source src="images/search_rescue.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-
-                            <p style="font-size: 18px;line-height:1.6;text-align:justify;margin-top: 20px;">
-                                We demonstrate task and motion planning for time-critical search and rescue tasks using humanoid robot teams inside a realistic battlefield simulation environment using MuJoCo.
-                            </p>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-
-            <!-- Third Applicative Project -->
-            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-bottom:40px;">
-                <tr>
-                    <td style="padding:20px;text-align:center">
-                        <div style="min-height:570px;">
-                            <a href="#" style="text-decoration: none;">
-                                <span style="font-weight: bold; font-size: 24px;">Development of Quadrupedal Walking and Climbing Robot</span>
-                            </a>
-                            <br><br>
-                            <span style="font-size: 18px;">Yusuke Tanaka, <strong>Xuan Lin</strong>*, Yuki Shirai*, Alexander Schperberg, Hayato Kato, Alexander Swerdlow, Naoya Kumagai, Dennis Hong (*equal contribution)</span>
-                            <br>
-                            <span style="font-size: 18px;"><em>IROS</em>, 2022</span>
-                            &nbsp;&nbsp;|&nbsp;&nbsp;
-                            <span>
-                                <a href="https://ieeexplore.ieee.org/abstract/document/9981555" style="text-decoration: none; color: #666;">paper</a>
-                            </span>
-
-                            <video width="80%" autoplay loop muted playsinline webkit-playsinline preload="auto" style="border-radius: 5px; margin-top: 20px;">
-                                <source src="images/SCALER_climbing.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-
-                            <p style="font-size: 18px;line-height:1.6;text-align:justify;margin-top: 20px;">
-                                We introduce SCALER, a quadrupedal robot capable of climbing bouldering walls, overhangs, and ceilings, as well as trotting on the ground while carrying payloads up to 233% of its weight on flat surfaces and 35% on vertical walls. <strong>The first author received the IROS 2022 SICE International Young Authors award. Congratulations!</strong>
-                            </p>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-
-            <!-- Fourth Applicative Project -->
-            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;">
-                <tr>
-                    <td style="padding:20px;text-align:center">
-                        <div style="min-height:570px;">
-                            <a href="https://xuanlin.github.io/SiLVIA-robot/" style="text-decoration: none;">
-                                <span style="font-weight: bold; font-size: 24px;">Development of Hexapodal Walking and Climbing Robot</span>
-                            </a>
-                            <br><br>
-                            <span style="font-size: 18px;"><strong>Xuan Lin</strong>, Jingwen Zhang, Junjie Shen, Gabriel Fernandez, Dennis Hong</span>
-                            <br>
-                            <span style="font-size: 18px;"><em>IROS</em>, 2019, <strong>Best Paper Award on Rescue Robotics</strong></span>
-                            &nbsp;&nbsp;|&nbsp;&nbsp;
-                            <span>
-                                <a href="https://ieeexplore.ieee.org/abstract/document/8968032" style="text-decoration: none; color: #666;">paper</a>
-                            </span>
-
-                            <video width="80%" autoplay loop muted playsinline webkit-playsinline preload="auto" style="border-radius: 5px; margin-top: 20px;">
-                                <source src="images/Ascent_SiLVIA.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-
-                            <p style="font-size: 18px;line-height:1.6;text-align:justify;margin-top: 20px;">
-                                We introduce SiLVIA, a hexapod robot that demonstrates climbing between two walls with bare foot and planned motion, the first robot to demonstrate such capability.
-                            </p>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-
-            
-        </td>
-    </tr>
-  </tbody>
-</table>
-</section>
-    
-<script>
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        const targetPosition = targetElement.offsetTop - 60; // Offset for the sticky nav bar
         
-        window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth',
-            duration: 1000  // This won't actually be used but shows intent
+    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+      <tbody>
+        <tr>
+           
+            <!-- Left Column - Theoretical -->
+            <td style="width:50%;vertical-align:top">
+                <h3 style="font-family: 'Montserrat', sans-serif; color: #444; margin-bottom: 30px; text-align: center; font-size: 28px; font-weight: bold;">Theoretical</h3>
+    
+                <!-- First Theoretical Project -->
+                <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-bottom:40px;">
+                    <tr>
+                        <td style="padding:20px;text-align:center">
+                            <div style="min-height:570px;">
+                                <a href="#" style="text-decoration: none;">
+                                    <span style="font-weight: bold; font-size: 24px;">Accelerate Hybrid Model Predictive Control using Generalized Benders Decomposition</span>
+                                </a>
+                                <br><br>
+                                <span style="font-size: 18px;"><strong>Xuan Lin</strong></span>
+                                <br>
+                                <span style="font-size: 18px;"><em>arXiv</em>, 2024</span>
+                                &nbsp;&nbsp;|&nbsp;&nbsp;
+                                <span>
+                                    <a href="https://arxiv.org/abs/2406.00780" style="text-decoration: none; color: #666;">paper(short)</a> /
+                                    <a href="https://arxiv.org/abs/2401.00917" style="text-decoration: none; color: #666;">paper(long)</a> /
+                                    <a href="https://github.com/XuanLin/Benders-MPC" style="text-decoration: none; color: #666;">code</a>
+                                </span>
+    
+                                <video width="80%" autoplay loop muted playsinline webkit-playsinline preload="auto" style="border-radius: 5px; margin-top: 20px;">
+                                    <source src="images/cart_pole_animation.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+    
+                                <p style="font-size: 18px;line-height:1.6;text-align:justify;margin-top: 20px;">
+                                    We propose a hybrid motion planning and control framework based on Generalized Benders Decomposition that controls a cart-pole system with randomly moving soft-contact walls reaching speeds 2-3 times faster than Gurobi, oftentimes exceeding 1000Hz.
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+    
+                <!-- Second Theoretical Project -->
+                <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-bottom:40px;">
+                    <tr>
+                        <td style="padding:20px;text-align:center">
+                            <div style="min-height:570px;">
+                                <a href="#" style="text-decoration: none;">
+                                    <span style="font-weight: bold; font-size: 24px;">Optimization-based Task and Motion Planning under Signal Temporal Logic Specifications using Logic Network Flow</span>
+                                </a>
+                                <br><br>
+                                <span style="font-size: 18px;"><strong>Xuan Lin</strong>, Jiming Ren, Samuel Coogan, Ye Zhao</span>
+                                <br>
+                                <span style="font-size: 18px;"><em>ICRA</em>, 2025</span>
+                                &nbsp;&nbsp;|&nbsp;&nbsp;
+                                <span>
+                                    <a href="https://arxiv.org/abs/2409.19168" style="text-decoration: none; color: #666;">paper</a> /
+                                    <a href="#" style="text-decoration: none; color: #666;">code</a>
+                                </span>
+    
+                                <img src='images/LNF.png' width="80%" style="border-radius: 5px; margin-top: 20px;">
+    
+                                <p style="font-size: 18px;line-height:1.6;text-align:justify;margin-top: 20px;">
+                                    We propose Logic Network Flow, an innovative optimization formulation for motion planning under temporal logic constraints. Synthesized with Dynamic Network Flow, our framework accelerates the computation by tightening the convex relaxations.
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+    
+                <!-- Third Theoretical Project -->
+                <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-bottom:40px;">
+                    <tr>
+                        <td style="padding:20px;text-align:center">
+                            <div style="min-height:570px;">
+                                <a href="#" style="text-decoration: none;">
+                                    <span style="font-weight: bold; font-size: 24px;">Evaluating Data-driven Performances of Mixed Integer Bilinear Formulations for Robotics Applications</span>
+                                </a>
+                                <br><br>
+                                <span style="font-size: 18px;"><strong>Xuan Lin</strong>, Gabriel Fernandez, Dennis Hong</span>
+                                <br>
+                                <span style="font-size: 18px;"><em>UR</em>, 2024, finalist, <strong>Best Paper Award</strong></span>
+                                &nbsp;&nbsp;|&nbsp;&nbsp;
+                                <span>
+                                    <a href="https://ieeexplore.ieee.org/abstract/document/10597466" style="text-decoration: none; color: #666;">paper</a> /
+                                    <a href="#" style="text-decoration: none; color: #666;">code</a>
+                                </span>
+    
+                                <img src='images/Bilinear.png' width="80%" style="border-radius: 5px; margin-top: 20px;">
+    
+                                <p style="font-size: 18px;line-height:1.6;text-align:justify;margin-top: 20px;">
+                                    We compare the data-driven performance of two MIBLP reformulations: mixed-integer programming (MIP) and mathematical programming with complementary constraints (MPCC). This evaluation is conducted on a book placement problem featuring discrete configuration switches and bilinear constraints.
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+    
+            <!-- Right Column - Applicative -->
+            <td style="width:50%;vertical-align:top;border-left: 1px solid #ddd">
+                <h3 style="font-family: 'Montserrat', sans-serif; color: #444; margin-bottom: 30px; text-align: center; font-size: 28px; font-weight: bold;">Applicative</h3>
+                        
+                <!-- First Applicative Project -->
+                <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-bottom:40px;">
+                    <tr>
+                        <td style="padding:20px;text-align:center">
+                            <div style="min-height:570px;">
+                                <a href="#" style="text-decoration: none;">
+                                    <span style="font-weight: bold; font-size: 24px;">Footstep Planning for Humanoid Soccer</span>
+                                </a>
+                                <br><br>
+                                <span style="font-size: 18px;"><strong>Xuan Lin</strong>, Ruochen Hou, Gabriel Fernandez, Dennis Hong</span>
+                                <br>
+                                <span style="font-size: 18px;"><em>RoboCup</em>, 2024, <strong>First Place</strong></span>
+                                &nbsp;&nbsp;|&nbsp;&nbsp;
+                                <span>
+                                    <a href="#" style="text-decoration: none; color: #666;">paper</a> /
+                                    <a href="#" style="text-decoration: none; color: #666;">code</a>
+                                </span>
+    
+                                <video width="80%" autoplay loop muted playsinline webkit-playsinline preload="auto" style="border-radius: 5px; margin-top: 20px;">
+                                    <source src="images/soccer.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+    
+                                <p style="font-size: 18px;line-height:1.6;text-align:justify;margin-top: 20px;">
+                                    We use Divergent-Component-of-Motion (DCM) to plan footsteps for humanoid soccer.
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+    
+                <!-- Second Applicative Project -->
+                <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-bottom:40px;">
+                    <tr>
+                        <td style="padding:20px;text-align:center">
+                            <div style="min-height:570px;">
+                                <a href="#" style="text-decoration: none;">
+                                    <span style="font-weight: bold; font-size: 24px;">Time Critical Search and Rescue using Humanoid Robot Teams</span>
+                                </a>
+                                <br><br>
+                                <span style="font-size: 18px;"><strong>Xuan Lin</strong>, Jiming Ren, Samuel Coogan, Ye Zhao</span>
+                                <br>
+                                <span style="font-size: 18px;"><em>Ongoing work</em>, 2024</span>
+    
+                                <video width="80%" autoplay loop muted playsinline webkit-playsinline preload="auto" style="border-radius: 5px; margin-top: 20px;">
+                                    <source src="images/search_rescue.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+    
+                                <p style="font-size: 18px;line-height:1.6;text-align:justify;margin-top: 20px;">
+                                    We demonstrate task and motion planning for time-critical search and rescue tasks using humanoid robot teams inside a realistic battlefield simulation environment using MuJoCo.
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+    
+                <!-- Third Applicative Project -->
+                <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-bottom:40px;">
+                    <tr>
+                        <td style="padding:20px;text-align:center">
+                            <div style="min-height:570px;">
+                                <a href="#" style="text-decoration: none;">
+                                    <span style="font-weight: bold; font-size: 24px;">Development of Quadrupedal Walking and Climbing Robot</span>
+                                </a>
+                                <br><br>
+                                <span style="font-size: 18px;">Yusuke Tanaka, <strong>Xuan Lin</strong>*, Yuki Shirai*, Alexander Schperberg, Hayato Kato, Alexander Swerdlow, Naoya Kumagai, Dennis Hong (*equal contribution)</span>
+                                <br>
+                                <span style="font-size: 18px;"><em>IROS</em>, 2022</span>
+                                &nbsp;&nbsp;|&nbsp;&nbsp;
+                                <span>
+                                    <a href="https://ieeexplore.ieee.org/abstract/document/9981555" style="text-decoration: none; color: #666;">paper</a>
+                                </span>
+    
+                                <video width="80%" autoplay loop muted playsinline webkit-playsinline preload="auto" style="border-radius: 5px; margin-top: 20px;">
+                                    <source src="images/SCALER_climbing.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+    
+                                <p style="font-size: 18px;line-height:1.6;text-align:justify;margin-top: 20px;">
+                                    We introduce SCALER, a quadrupedal robot capable of climbing bouldering walls, overhangs, and ceilings, as well as trotting on the ground while carrying payloads up to 233% of its weight on flat surfaces and 35% on vertical walls. <strong>The first author received the IROS 2022 SICE International Young Authors award. Congratulations!</strong>
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+    
+                <!-- Fourth Applicative Project -->
+                <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;">
+                    <tr>
+                        <td style="padding:20px;text-align:center">
+                            <div style="min-height:570px;">
+                                <a href="https://xuanlin.github.io/SiLVIA-robot/" style="text-decoration: none;">
+                                    <span style="font-weight: bold; font-size: 24px;">Development of Hexapodal Walking and Climbing Robot</span>
+                                </a>
+                                <br><br>
+                                <span style="font-size: 18px;"><strong>Xuan Lin</strong>, Jingwen Zhang, Junjie Shen, Gabriel Fernandez, Dennis Hong</span>
+                                <br>
+                                <span style="font-size: 18px;"><em>IROS</em>, 2019, <strong>Best Paper Award on Rescue Robotics</strong></span>
+                                &nbsp;&nbsp;|&nbsp;&nbsp;
+                                <span>
+                                    <a href="https://ieeexplore.ieee.org/abstract/document/8968032" style="text-decoration: none; color: #666;">paper</a>
+                                </span>
+    
+                                <video width="80%" autoplay loop muted playsinline webkit-playsinline preload="auto" style="border-radius: 5px; margin-top: 20px;">
+                                    <source src="images/Ascent_SiLVIA.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+    
+                                <p style="font-size: 18px;line-height:1.6;text-align:justify;margin-top: 20px;">
+                                    We introduce SiLVIA, a hexapod robot that demonstrates climbing between two walls with bare foot and planned motion, the first robot to demonstrate such capability.
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+    
+                
+            </td>
+        </tr>
+      </tbody>
+    </table>
+    </section>
+        
+    <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            const targetPosition = targetElement.offsetTop - 60; // Offset for the sticky nav bar
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth',
+                duration: 1000  // This won't actually be used but shows intent
+            });
         });
     });
-});
-
-</script>
+    
+    </script>
     
 </body>
 
