@@ -195,35 +195,39 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background: rgba(0,0,0,0.3); /* Semi-transparent dark overlay */
+    justify-content: flex-end;  /* Changed from center to flex-end */
+    padding-bottom: 80px;  /* Space from bottom */
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);  /* Gradient overlay darker at bottom */
     z-index: 2;
 }
 
 .hero-title {
     color: white;
-    font-size: 60px;
+    font-size: 80px;  /* Increased from 60px */
     font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    margin-bottom: 15px;
     font-family: 'Montserrat', sans-serif;
 }
 
 .hero-subtitle {
     color: white;
-    font-size: 24px;
+    font-size: 32px;  /* Increased from 24px */
     font-weight: 300;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
     font-family: 'Montserrat', sans-serif;
 }
 
 /* Mobile responsive */
 @media screen and (max-device-width: 480px) {
     .hero-title {
-        font-size: 40px;
+        font-size: 48px;  /* Adjusted for mobile */
     }
     .hero-subtitle {
-        font-size: 18px;
+        font-size: 20px;  /* Adjusted for mobile */
+    }
+    .hero-overlay {
+        padding-bottom: 50px;  /* Less padding on mobile */
     }
 }
     
@@ -232,7 +236,7 @@ section {
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <title>Xuan Lin</title>
+    <title>About Me</title>
 
     <meta name="author" content="Xuan Lin">
     <meta name="viewport" content="width=device-width, initial-scale=1">
