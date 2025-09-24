@@ -13,14 +13,45 @@
 html {
     scroll-behavior: smooth;
 }
+
+/* Hero Video */
+.hero-video-container {
+    position: relative;
+    width: 100%;
+    height: 60vh;  /* Adjust height as needed */
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* This ensures video fills container without black bars */
+}
+
+.hero-video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, transparent 50%, rgba(0,0,0,0.2) 100%);
+    pointer-events: none;
+}
     
 .nav-bar {
-    position: sticky;
+    position: fixed;  /* Changed from sticky to fixed */
     top: 0;
-    background-color: white;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.95);  /* Slight transparency */
+    backdrop-filter: blur(10px);  /* Blur effect */
     z-index: 1000;
     padding: 15px 0;
     border-bottom: 1px solid #eee;
+    width: 100%;
 }
 
 .nav-links {
@@ -104,6 +135,8 @@ section {
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%);
+    margin-top: 60vh;  /* Add this line to push content below video */
+    padding-top: 80px;  /* Add padding for fixed nav */
 }
 
 #home > table {
@@ -179,7 +212,14 @@ section {
 </head>
     
 <body>
-    
+
+    <nav class="nav-bar">
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#research">Research Projects</a></li>
+        </ul>
+    </nav>
+
     <div class="hero-video-container">
         <video autoplay loop muted playsinline class="hero-video">
             <source src="images/door_open_hero.webm" type="video/webm">
@@ -187,11 +227,6 @@ section {
         </video>
         <div class="hero-video-overlay"></div>
     </div>
-
-    <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#research">Research Projects</a></li>
-    </ul>
 
     <section id="home">
         <style>
