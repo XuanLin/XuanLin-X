@@ -23,11 +23,16 @@ html {
     background: #000;
 }
 
-.hero-video {
-    width: 100%;
-    height: auto;
-    display: block;
+.hero video {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 95%;
+    height: 100%;
+    transform: translateX(-50%); /* centers the video */
+    object-fit: cover;
 }
+
     
 .nav-bar {
     position: fixed;  /* Changed from sticky to fixed */
