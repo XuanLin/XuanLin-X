@@ -17,15 +17,22 @@ html {
 /* Hero Video */
 .hero-video-container {
     position: relative;
-    width: 97%;
+    width: 100%;           /* full page width */
+    height: 100vh;         /* full viewport height */
     overflow: hidden;
+    display: flex;         /* flex to center content */
+    justify-content: center; /* center horizontally */
+    align-items: center;     /* center vertically */
+    background: #000;      /* fallback background */
 }
 
 .hero-video {
-    width: 97%;
-    height: 100%;
-    object-fit: contain;
+    width: 99%;            /* slightly smaller than container width */
+    height: 100%;           /* fill container height */
+    object-fit: cover;     /* scale to fill, crop if necessary */
 }
+
+
 
     
 .nav-bar {
