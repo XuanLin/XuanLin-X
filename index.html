@@ -595,17 +595,11 @@ section {
 <script>
 // Ensure video loops
 const heroVideo = document.querySelector('.hero-video');
-if (heroVideo) {
-    heroVideo.loop = true;
-    heroVideo.muted = true;
-    heroVideo.autoplay = true;
-    
-    // Fallback for loop
-    heroVideo.addEventListener('ended', function() {
-        heroVideo.currentTime = 0;
-        heroVideo.play();
-    });
-}
+
+heroVideo.loop = true;
+heroVideo.muted = true;
+heroVideo.autoplay = true;
+
 </script>
 </body>
 
